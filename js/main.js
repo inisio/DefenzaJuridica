@@ -15,7 +15,7 @@ function contador(){
         n=n+1;
     }else{
         n=0;
-        caja.innerHTML = 'Defenza Juridica.'
+        caja.innerHTML = 'Defensa Juridica.'
     }
     
 }
