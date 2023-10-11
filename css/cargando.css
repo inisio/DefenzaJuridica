@@ -1,0 +1,52 @@
+.logo_gif{
+    background: #000;
+    background-image: url(./../img/logo.gif);
+    background-position: center;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 12vh;
+}
+
+/* el boron del menu */
+.boton{
+height: 3.5rem;
+}
+
+/* no se para que sirve */
+.espacio{
+    height: 3rem;
+}
+
+
+#esferas{
+    position: relative;
+}
+
+#esferas:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 35% 50%;
+    background-attachment: fixed;
+    background-size: auto max(100vw, 100vh);
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.columpio{
+    animation-name: ar-ab;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ar-ab {
+    0%{
+        padding: 0.2rem;
+    }
+    100%{
+        padding: 1rem;
+    }
+}
