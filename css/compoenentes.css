@@ -69,6 +69,25 @@
     transition: 2s;
 }
 
+.galeria_imagenx{
+    height: 450px;
+    flex-basis: 350px; 
+    /*
+    flex-grow: Define la capacidad de un elemento 
+    para crecer en relación con otros elementos
+
+    flex-shrink: Define la capacidad de un elemento 
+    para reducirse en tamaño en relación con otros elementos
+
+    flex-basis: Define el tamaño inicial de un elemento 
+    antes de que se distribuya el espacio disponible. 
+    */
+
+           /*derecha   abajo   DISPERCION   aumento */
+    box-shadow: 20px 20px 10px -5px rgba(0, 0, 0, 0.758);
+    transition: 2s;
+}
+
 .galeria_img{
     filter: grayscale(50%);
     transition: 2s;

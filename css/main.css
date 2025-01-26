@@ -2,6 +2,13 @@
   --size-image-- : min(100vw, 100vh);
 }
 
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  text-align: center;
+  color: #333;
+}
+
 body{
   background-image: url(../img/fondo.png);
   background-size: auto;
