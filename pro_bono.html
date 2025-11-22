@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Servicio Pro Bono | Defensa Jurídica Cancún | Asistencia legal gratuita">
+  <link rel="shortcut icon" href="logo.jpg">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicio Pro Bono - Defensa Jurídica Cancún</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --color-primary: #030303;
+      --color-secondary: #957737;
+      --color-light: #f8f9fa;
+      --color-dark: #d08617;
+      --color-negro: #000000;
+      --color-gray: #E1DDDD;
+      --linear-probono-hero: linear-gradient(#1c1c1ce6, #2c2c2ce6), 
+      url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=80');
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    
+    /* Fondo oscuro cuando el menú está activo */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0);
+      opacity: 0;
+      pointer-events: none;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      z-index: 999;
+    }
+    
+    .menu-overlay.active {
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    /* Menú lateral */
+    .side-menu {
+      width: 270px;
+      height: 100vh;
+      background-color: var(--color-negro);
+      color: white;
+      padding: 1.5rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 3px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    .menu-overlay.active .side-menu {
+      transform: translateX(0%);
+    }
+    
+    .menu-toggle {
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 0 0 8px 8px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      user-select: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .menu-toggle:hover {
+      background: #ffffff;
+      color: #000;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+    
+    nav li {
+      margin: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.8rem;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+      display: block;
+      padding-left: 10px;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--color-secondary);
+      border-left: 3px solid var(--color-secondary);
+      padding-left: 15px;
+    }
+    
+    .close-btn {
+      background: transparent;
+      cursor: pointer;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .close-btn:hover {
+      color: var(--color-secondary);
+    }
+    
+    /* Header */
+    .top-bar {
+      background-color: var(--color-primary);
+      color: white;
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-info a:hover {
+      color: var(--color-secondary);
+    }
+    
+    .contact-info i {
+      margin-right: 0.5rem;
+      color: var(--color-secondary);
+    }
+    
+    .logo {
+      max-width: 180px;
+      height: auto;
+    }
+    
+    /* Sección principal Pro Bono */
+    .probono-hero {
+      background: var(--linear-probono-hero);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .probono-hero h1 {
+      color: white;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .probono-hero h1 mark {
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+      padding: 0.1rem 0.5rem;
+    }
+    
+    .probono-hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    
+    /* Botones */
+    .btn-primary {
+      background-color: var(--color-primary);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #08244e;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .btn-gold {
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-gold:hover {
+      background-color: #c19b2a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Sección de información Pro Bono */
+    .info-section {
+      padding: 5rem 0;
+      background-color: #f8f9fa;
+    }
+    
+    .info-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      border-top: 3px solid var(--color-secondary);
+      padding: 2rem;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .info-icon {
+      font-size: 2.5rem;
+      color: var(--color-secondary);
+      margin-bottom: 1rem;
+    }
+    
+    .info-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Sección del formulario */
+    .form-section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: var(--color-secondary);
+    }
+    
+    .section-title.text-center:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .probono-form-container {
+      background: white;
+      border-radius: 8px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--color-secondary);
+    }
+    
+    .probono-form-container h2 {
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .probono-form-container .form-control {
+      padding: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .probono-form-container .form-control:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 0.25rem rgba(10, 44, 94, 0.1);
+    }
+    
+    .probono-form-container textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .probono-form-container .btn-submit {
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    .probono-form-container .btn-submit:hover {
+      background-color: #c19b2a;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    #probono-status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      display: none;
+    }
+    
+    .probono-ok { 
+      background: #a5d6a7; 
+      color: #1b5e20; 
+    }
+    
+    .probono-error { 
+      background: #ef9a9a; 
+      color: #b71c1c; 
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--color-primary);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer h5 {
+      color: var(--color-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .footer ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    
+    .footer ul li {
+      margin-bottom: 0.7rem;
+    }
+    
+    .footer ul li a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer ul li a:hover {
+      color: var(--color-secondary);
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--color-secondary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .probono-hero h1 {
+        font-size: 2.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .probono-form-container {
+        padding: 2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .probono-hero {
+        padding: 3rem 0;
+      }
+      
+      .probono-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+    @media (min-width: 992px) {
+        .menu-toggle {
+            display: none !important;
+        }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barra superior de contacto -->
+  <div class="top-bar d-none d-lg-block">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="contact-info">
+          <a href="tel:+529983013652"><i class="fas fa-phone"></i> +52 998 301 3652</a>
+          <a href="mailto:davidperez.abogado77@gmail.com"><i class="fas fa-envelope"></i> davidperez.abogado77@gmail.com</a>
+          <a><i class="fas fa-map-marker-alt"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún,<br> Benito Juárez, Quintana Roo., Cancún, México</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón para abrir el menú -->
+  <div class="menu-toggle" onclick="toggle_menu()"><i class="fas fa-bars me-2"></i>Menú</div>
+
+  <!-- Fondo + Menú -->
+  <div class="menu-overlay" id="menuOverlay" onclick="ocultar_menu()">
+    <aside class="side-menu" onclick="event.stopPropagation()" role="navigation" aria-label="Menú lateral">
+      <header class="d-flex justify-content-between align-items-center mb-4">
+        <img onclick="ocultar_menu()" src="./logo.jpg" alt="Defensa Jurídica Cancún" class="logo mb-4">
+      </header>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
+          <li><a href="index.html#servicios"><i class="fas fa-gavel me-2"></i>Servicios</a></li>
+          <li><a href="index.html#testimonios"><i class="fas fa-star me-2"></i>Testimonios</a></li>
+          <li><a href="index.html#faq"><i class="fas fa-book me-2"></i>Preguntas Frecuentes</a></li>
+          <li><a href="#"><i class="fas fa-hand-holding-heart me-2"></i>Pro Bono</a></li>
+          <li><a href="index.html#contacto"><i class="fas fa-envelope me-2"></i>Contacto</a></li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+  <!-- Hero Section Pro Bono -->
+  <section class="probono-hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1>Servicio Legal <mark>Pro Bono</mark></h1>
+          <p>En Defensa Jurídica Cancún creemos que la justicia debe ser accesible para todos. Nuestro programa Pro Bono ofrece asistencia legal gratuita a personas y comunidades que enfrentan barreras económicas para acceder a representación legal.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#formulario" class="btn btn-gold">Solicitar Asistencia</a>
+            <a href="#informacion" class="btn btn-outline-light" style="padding: 0.8rem 2rem;">Más Información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Información sobre el servicio Pro Bono -->
+  <section id="informacion" class="info-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">¿Qué es el Servicio Pro Bono?</h2>
+        <p class="text-muted">Comprometidos con la justicia social y el acceso a la representación legal</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Nuestro Compromiso</h3>
+            <p>Como parte de nuestra responsabilidad social, dedicamos una parte significativa de nuestro tiempo y recursos a brindar servicios legales gratuitos a quienes más lo necesitan.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h3>Criterios de Elegibilidad</h3>
+            <p>Evaluamos cada solicitud considerando factores como situación económica, urgencia del caso, impacto en la comunidad y disponibilidad de nuestros recursos.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Áreas de Enfoque</h3>
+            <p>Ofrecemos asistencia en diversas áreas del derecho, con especial énfasis en casos de derecho familiar, laboral y civil que afecten significativamente la calidad de vida.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-12 mx-auto">
+          <div class="info-card">
+            <h3 class="text-center mb-4">Proceso de Solicitud</h3>
+            <ol>
+              <li class="mb-3"><strong>Complete el formulario:</strong> Proporcione información detallada sobre su situación legal y económica.</li>
+              <li class="mb-3"><strong>Revisión inicial:</strong> Nuestro equipo evaluará su solicitud dentro de los próximos 5-7 días hábiles.</li>
+              <li class="mb-3"><strong>Entrevista:</strong> Si su caso cumple con los criterios, programaremos una entrevista para conocer más detalles.</li>
+              <li class="mb-3"><strong>Decisión:</strong> Le notificaremos si podemos tomar su caso y le asignaremos un abogado especializado.</li>
+            </ol>
+            <p class="mt-4"><strong>Nota:</strong> La aceptación de su solicitud está sujeta a la disponibilidad de nuestros recursos y la naturaleza de su caso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario Pro Bono -->
+  <section id="formulario" class="form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="probono-form-container">
+            <h2>Formulario de Solicitud Pro Bono</h2>
+            <p class="text-muted mb-4">Complete este formulario con la mayor precisión posible. Toda la información proporcionada será tratada con estricta confidencialidad.</p>
+            
+            <form id="probono-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" id="nombre" class="form-control" placeholder="Nombre(s)" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" id="apellidoP" class="form-control" placeholder="Apellido Paterno" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" id="apellidoM" class="form-control" placeholder="Apellido Materno" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="number" id="edad" class="form-control" placeholder="Edad" min="1" max="120" required>
+                </div>
+              </div>
+              
+              <input type="text" id="contacto" class="form-control" placeholder="Correo electrónico o Teléfono" required>
+              
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="text" id="ciudad" class="form-control" placeholder="Ciudad" required>
+                </div>
+              </div>
+              
+              <textarea id="descripcion" class="form-control" placeholder="Describe tu caso legal (máximo 850 caracteres)" maxlength="900" required></textarea>
+              
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="privacidad" required>
+                <label class="form-check-label" for="privacidad">
+                  Acepto que mis datos sean tratados de acuerdo con la <a href="#">Política de Privacidad</a>
+                </label>
+              </div>
+              
+              <button type="submit" class="btn-submit">Enviar Solicitud</button>
+              
+              <div id="probono-status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <h5>Defensa Jurídica Cancún</h5>
+          <p class="mb-4">Ofrecemos asesoría legal especializada para proteger tus derechos con un equipo de abogados expertos, comprometidos con tu tranquilidad y seguridad jurídica.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h5>Enlaces Rápidos</h5>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#testimonios">Testimonios</a></li>
+            <li><a href="index.html#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#">Pro Bono</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-4">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="index.html#servicios">Derecho Penal</a></li>
+            <li><a href="index.html#servicios">Derecho Civil</a></li>
+            <li><a href="index.html#servicios">Derecho Laboral</a></li>
+            <li><a href="index.html#servicios">Derecho Familiar</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-4">
+          <h5>Contacto</h5>
+          <ul>
+            <li><i class="fas fa-map-marker-alt me-2"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún, Benito Juárez, Quintana Roo., Cancún, México</li>
+            <li><i class="fas fa-phone me-2"></i>+52 998 301 3652</li>
+            <li><i class="fas fa-envelope me-2"></i> davidperez.abogado77@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Defensa Jurídica Cancún. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const overlay = document.getElementById("menuOverlay");
+    const API_URL = "https://script.google.com/macros/s/AKfycbxIFDH6J0N-DBtYUmpCsOeAnTN5jiWfnjDqu5PNV6vOkt9zcSHaosOAlxobbgR8TkOY/exec";
+    
+    function toggle_menu() {
+      const isActive = overlay.classList.toggle("active");
+      document.body.style.overflow = isActive ? "hidden" : "auto";
+    }
+
+    function mostrar_menu() {
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    
+    function ocultar_menu() {
+      overlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    }
+    
+    // Cerrar menú al presionar Esc
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        ocultar_menu();
+      }
+    });
+
+    function showStatus(msg, type="probono-ok") {
+      const box = document.getElementById("probono-status");
+      box.className = type;
+      box.innerText = msg;
+      box.style.display = "block";
+      
+      // Scroll para mostrar el mensaje
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Manejo del formulario
+    document.getElementById("probono-form").addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const data = {
+        nombre: document.getElementById("nombre").value.trim(),
+        apellidoP: document.getElementById("apellidoP").value.trim(),
+        apellidoM: document.getElementById("apellidoM").value.trim(),
+        edad: document.getElementById("edad").value.trim(),
+        contacto: document.getElementById("contacto").value.trim(),
+        ciudad: document.getElementById("ciudad").value.trim(),
+        costo: 0,
+        descripcion: document.getElementById("descripcion").value.trim(),
+        estado: 0
+      };
+
+      // Validación
+      if (!data.nombre || !data.apellidoP || !data.apellidoM) {
+        showStatus("Completa nombre y apellidos", "probono-error");
+        return;
+      }
+
+      if (data.descripcion.length > 850) {
+        showStatus("La descripción supera los 850 caracteres", "probono-error");
+        return;
+      }
+
+      if (!document.getElementById("privacidad").checked) {
+        showStatus("Debes aceptar la política de privacidad", "probono-error");
+        return;
+      }
+
+      showStatus("Enviando solicitud...", "probono-ok");
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+
+        const json = await res.json();
+
+        if (json.status === "ok") {
+          showStatus("Solicitud enviada correctamente. ID: " + json.id + ". Nos pondremos en contacto contigo pronto.", "probono-ok");
+
+          // Limpiar formulario
+          document.getElementById("probono-form").reset();
+        } else {
+          showStatus("Error al enviar la solicitud: " + json.error, "probono-error");
+        }
+
+      } catch (err) {
+        showStatus("Error al conectar con el servidor. Intenta nuevamente.", "probono-error");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
