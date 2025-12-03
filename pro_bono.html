@@ -342,10 +342,11 @@
 <script src="./js/snowstorm.js"></script>
 <script>
   window.addEventListener('load', () => {
+    snowStorm.excludeMobile = false; 
     snowStorm.snowColor = '#ffffff';
     snowStorm.flakesMax = 80;
     snowStorm.flakesMaxActive = 50;
-    snowStorm.followMouse = false;
+    snowStorm.followMouse = true;
     snowStorm.snowCharacter = "❄";
   });
 </script>
