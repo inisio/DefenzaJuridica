@@ -22,9 +22,25 @@
 
   <!-- Peson desing -->
   <link rel="stylesheet" href="../DefenzaJuridica/css/landing.css">
+
+  <!-- New year -->
+  <link rel="stylesheet" href="../DefenzaJuridica/css/new_year.css">
 </head>
 
 <body background="red">
+
+  <!-- 🎆 SVG FUEGOS -->
+<svg id="fireworks">
+  <defs>
+    <filter id="fireGlow" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
 
   <!-- Barra superior de contacto -->
   <div class="top-bar d-none d-lg-block">
@@ -74,6 +90,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-7 hero-content">
+          <h1 id="fireworks_titulo"></h1>
           <h1>Abogados en <mark>Cancún</mark></h1>
           <p>Bienvenido(a) a <strong>Defensa Jurídica.</strong> 
 Somos la firma de abogados especialistas con el conocimiento jurídico y la constante actualización que usted requiere. Contamos con un equipo de profesionales con sólida experiencia en litigio y especialización en diversas ramas del derecho, brindando soluciones efectivas en Cancún, Quintana Roo.</p>
@@ -615,17 +632,22 @@ Somos la firma de abogados especialistas con el conocimiento jurídico y la cons
       window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
     }
   </script>
+<!-- COPOS DE NIEVE
 <script src="./js/snowstorm.js"></script>
-<script>
+ <script>
   window.addEventListener('load', () => {
     snowStorm.excludeMobile = false; 
     snowStorm.snowColor = '#ffffff';
-    snowStorm.flakesMax = 80;
-    snowStorm.flakesMaxActive = 50;
-    snowStorm.followMouse = true;
+    snowStorm.flakesMax = 50;
+    snowStorm.flakesMaxActive =10;
+    snowStorm.followMouse = false;
     snowStorm.snowCharacter = "❄";
   });
-</script>
+</script> 
+-->
+<script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js"></script>
+<script src="./js/new_year.js"></script>
+
 </body>
 
 </html>

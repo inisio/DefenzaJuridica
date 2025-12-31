@@ -1,0 +1,50 @@
+  /* 🎆 FONDO */
+  #fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100wv;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* 🎴 CARD */
+  .fireworks_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    color: red;
+    
+  }
+
+  .fireworks_card {
+    background: rgba(255, 255, 255, 0.151);
+    padding: 60px 70px;
+    border-radius: 22px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.45);
+    text-align: center;
+    pointer-events: auto;
+  }
+
+  #fireworks_titulo {
+    width: 600px;
+    max-width: 90vw;
+    margin: auto;
+  }
+
+  .fireworks_sub {
+    margin-top: 30px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #444;
+    opacity: 0;
+    animation: fireworks_fade 1.2s ease forwards;
+    animation-delay: 4.3s;
+  }
+
+  @keyframes fireworks_fade {
+    to { opacity: 1; }
+  }
