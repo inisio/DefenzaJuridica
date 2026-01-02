@@ -253,8 +253,29 @@ class TextAnimation {
   }
 }
 
+const IS_ANDROID = navigator.userAgent.toLowerCase().includes("android");
+
 // Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Configuración de la animación de texto
+  const textAnimation = new TextAnimation({
+    text: 'Happy New Year',
+    fontSize: 24,
+    strokeWidth: 2.6,
+    color: '#ffffffff',
+    duration: 4200
+  });
+
+  if (IS_ANDROID) {
+    const svg = document.getElementById("fireworks");
+    if (svg) {
+      svg.style.pointerEvents = "none";
+      svg.style.display = "none";
+    }
+    return;
+  }
+
   // Configuración del sistema de fuegos artificiales
   const fireworks = new FireworksSystem({
     maxActiveFireworks: 10,       // Máximo 10 fuegos activos en total
@@ -263,15 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gravity: 0.002,
     colors: ["#ff4500", "#ff0000", "#ffaa00", "#ff6600", "#ffd700"]
     //colors: ["#998a69ff", "#e0d6a8ff", "#ffaa00", "#ff6600", "#ffd700"]
-  });
-  
-  // Configuración de la animación de texto
-  const textAnimation = new TextAnimation({
-    text: 'Happy New Year',
-    fontSize: 24,
-    strokeWidth: 2.6,
-    color: '#ffffffff',
-    duration: 4200
   });
   
   // Mostrar estadísticas cada 5 segundos
