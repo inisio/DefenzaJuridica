@@ -1,654 +1,81 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="[Servicio de abogado] | abogado | Cancún |
-  | abogados en linea | divorcios | Derecho del Trabajo | amparos | contratos |
-  custodias | David Perez |">
-  <link rel="shortcut icon" href="logo.jpg">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Defensa Jurídica Cancún - Asesoría Legal Profesional</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Peson desing -->
-  <link rel="stylesheet" href="../DefenzaJuridica/css/landing.css">
-
-  <!-- New year -->
-  <link rel="stylesheet" href="../DefenzaJuridica/css/new_year.css">
+    <title>Home - Sistema de Productos</title>
+    <link rel="stylesheet" href="./src/css/bootstrap-5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
-
-<body background="red">
-
-  <!-- 🎆 SVG FUEGOS -->
-<svg id="fireworks">
-  <defs>
-    <filter id="fireGlow" x="-200%" y="-200%" width="400%" height="400%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-</svg>
-
-  <!-- Barra superior de contacto -->
-  <div class="top-bar d-none d-lg-block">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="contact-info">
-          <a href="./"><img src="./logo.jpg" width="40rem"></a>
-          <a href="tel:+529983013652"><i class="fas fa-phone"></i> +52 998 301 3652</a>
-          <a href="mailto:davidperez.abogado77@gmail.com"><i class="fas fa-envelope"></i> davidperez.abogado77@gmail.com</a>
-          <a ><i class="fas fa-map-marker-alt"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún,<br> Benito Juárez, Quintana Roo., Cancún, México</a>
-        </div>
-        <div class="social-links">
-          <div class="social-links">
-            <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Botón para abrir el menú -->
-  <div class="menu-toggle" onclick="toggle_menu()"><i class="fas fa-bars me-2"></i>Menú</div>
-
-  <!-- Fondo + Menú -->
-  <div class="menu-overlay" id="menuOverlay" onclick="ocultar_menu()">
-    <aside class="side-menu" onclick="event.stopPropagation()" role="navigation" aria-label="Menú lateral">
-      <header class="d-flex justify-content-between align-items-center mb-4">
-        <img onclick="ocultar_menu()" src="./logo.jpg" alt="Defensa Jurídica Cancún" class="logo mb-4">
-      </header>
-      <nav>
-        <ul>
-          <li><a href="#hero"><i class="fas fa-home me-2"></i>Inicio</a></li>
-          <li><a href="#servicios"><i class="fas fa-gavel me-2"></i>Servicios</a></li>
-          <!-- <li><a href="#"><i class="fas fa-users me-2"></i>Nuestro Equipo</a></li> -->
-          <li><a href="#testimonios"><i class="fas fa-star me-2"></i>Testimonios</a></li>
-          <li><a href="#faq"><i class="fas fa-book me-2"></i>Preguntas Frecuentes</a></li>
-          <li><a href="#contacto"><i class="fas fa-envelope me-2"></i>Contacto</a></li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="hero" class="hero-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 hero-content">
-          <h1 id="fireworks_titulo"></h1>
-          <h1>Abogados en <mark>Cancún</mark></h1>
-          <p>Bienvenido(a) a <strong>Defensa Jurídica.</strong> 
-Somos la firma de abogados especialistas con el conocimiento jurídico y la constante actualización que usted requiere. Contamos con un equipo de profesionales con sólida experiencia en litigio y especialización en diversas ramas del derecho, brindando soluciones efectivas en Cancún, Quintana Roo.</p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#contacto" class="btn btn-gold">Agenda una Consulta</a>
-            <a href="#servicios" class="btn btn-outline-light">Nuestros Servicios</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<body class="bg-complementario-secundario min-h-screen">
 
 
-  <!-- Misiosion -->
-  <section id="servicios" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title">Nuestra Misión</h2>
-      </div>
+    <ensamblar src="./src/html/secciones/header.html">
+        Cargando header...
+    </ensamblar>
+  
 
-      <hr>
-        Nuestra misión es brindarle un servicio legal basado en principios de honestidad, confianza y soluciones reales, que responda a sus necesidades y expectativas. Estamos comprometidos a ofrecer alternativas idóneas para cada caso, gracias a que contamos con los conocimientos teóricos y prácticos, los principios éticos y los contactos necesarios para proporcionarle las mejores opciones para su situación particular.
-        <hr>
-        Confíe en nosotros y compruebe que defenderemos sus intereses. Si busca un abogado que lo escuche, lo asesore y lo represente con profesionalidad, honestidad y eficacia, no dude en contactarnos. En DEFENSA JURÍDICA estamos listos para atenderlo y resolver su situación legal.
-      <hr>
-      </div>
-    </div>
-  </section>
-  <div class="text-light px-2 py-3 text-center" style="background: #311f05;">
-    Conoce nuestras propuestas de interes legal. <br>
-    <a href="pro_bono.html">Temas Probono</a>
-  </div>
+    <ensamblar 
+    src="./src/html/apartados/hero_section_image.html"
+    miken_datos='{
+        "img":"./src/img/martillo.svg",
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title">Nuestros Servicios Legales</h2>
-        <p class="text-muted">Protección jurídica integral con estrategias personalizadas</p>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-gavel"></i>
-            </div>
-            <h3>Derecho Penal</h3>
-            <p>
-              Delitos NO GRAVES de fuero Común y Federal
-              Amparo Directo o Indirecto en la materia.
-              Asesoría para Centros de Justicia Alternativa.
-            </p>
-          </div>
-        </div>
+        "Titulo1":"Abogados en",
+        "TituloMark":"Cancún",
+
+        "SubTitulo":"Bienvenido(a) a",
+        "SubTituloStrong":"Defensa Jurídica.",
+        "info":"Somos la firma de abogados especialistas con el conocimiento jurídico y la constante actualización que usted requiere. Contamos con un equipo de profesionales con sólida experiencia en litigio y especialización en diversas ramas del derecho, brindando soluciones efectivas en Cancún, Quintana Roo.",
         
-        <div class="col-md-6 col-lg-3">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-home"></i>
-            </div>
-            <h3>Derecho Civil</h3>
-            <p>
-              Cumplimiento e Incumplimiento de contratos, 
-              Jurisdicciones voluntarias, 
-              Consignaciones económicas, 
-              Consignaciones económicas, 
-              Desahucio, 
-              Reivindicaciones</p>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <h3>Derecho Laboral</h3>
-            <p>
-              Demandas y contestaciones de demandas Colectivas.
-              Despidos Injustificados.
-              Despidos Justificados.
-              Mobbing o “acoso laboral”
-              Conciliaciones.
-              Indemnizaciones.
-            </p>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Derecho Familiar</h3>
-            <p>
-              Divorcio unilateral.
-              Guarda y Custodia
-              Pensión Alimenticia.
-              Convivencias.
-              Reconocimiento de Paternidad.
-              Testamentarios e Intestamentarios.
-              Cancelación o Disminución de Pensión Alimenticia.
-              Perdida de Patria Potestad.
-              Consignaciones económicas.
-              Jurisdicciones voluntarias.
-            </p>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        "butom1":"Agenda Consulta",
+        "butom2":"Nuestros servicios",
 
-  <!-- Testimonios -->
-  <section id="testimonios" class="testimonial-section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title text-white">Lo Que Dicen Nuestros Clientes</h2>
-        <p class="text-white-50">Experiencias reales de quienes han confiado en nosotros</p>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "Excelente asesoría legal, muy profesionales y atentos en todo momento. Gracias a ellos resolví mi caso con éxito en menos tiempo del esperado."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">Roberto Martínez</h5>
-                <small>Caso de derecho laboral</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "El equipo de Defensa Jurídica Cancún me ayudó en un complicado proceso de divorcio. Su profesionalismo y sensibilidad hicieron la diferencia."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">María González</h5>
-                <small>Caso de derecho familiar</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "Contraté sus servicios para un caso penal y quedé impresionado con su conocimiento y dedicación. Defendieron mis derechos con excelentes resultados."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">Carlos Ramírez</h5>
-                <small>Caso de derecho penal</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        "href_butom1":"#",
+        "href_butom2":"#",
+    }'  
+    >
+        Cargando herosection...
+    </ensamblar>
 
-  <!-- FAQ -->
-  <section id="faq" class="faq-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h2 class="section-title">Preguntas Frecuentes</h2>
-          <p class="text-muted mb-4">Resolvemos tus dudas sobre nuestros servicios legales</p>
-          <div class="accordion" id="faqDefensa">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq-heading-1">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#faq-collapse-1" aria-expanded="true" aria-controls="faq-collapse-1">
-                  ¿Qué es la defensa jurídica?
-                </button>
-              </h2>
-              <div id="faq-collapse-1" class="accordion-collapse collapse show" aria-labelledby="faq-heading-1"
-                data-bs-parent="#faqDefensa">
-                <div class="accordion-body">
-                  Somos un despacho de abogados dedicado a ofrecer soluciones legales integrales, 
-                  estratégicas y altamente profesionales a empresas y particulares en Cancún
-                </div>
-              </div>
-            </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq-heading-2">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
-                  ¿Cómo puedo iniciar mi proceso legal con DEFENSA JURÍDICA y cuál es el primer paso?
-                </button>
-              </h2>
-              <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
-                data-bs-parent="#faqDefensa">
-                <div class="accordion-body">
-                   El primer paso es agendar una Cita de Valoración Inicial. En esta sesión, 
-                   nuestro abogado asignado escuchará detalladamente su situación, 
-                   analizará la documentación pertinente y le proporcionará una Evaluación 
-                   Jurídica Preliminar de su caso. Esto incluye una explicación clara de sus 
-                   opciones legales, los procedimientos a seguir y las posibles expectativas 
-                   de éxito. Puede solicitar su cita llamando a nuestro número o a través de 
-                   nuestro formulario en línea. Garantizamos absoluta confidencialidad y un 
-                   trato profesional desde el inicio.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq-heading-3">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
-                  ¿Qué áreas del Derecho atienden en DEFENSA JURÍDICA y cuál es su grado de especialización?
-                </button>
-              </h2>
-              <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
-                data-bs-parent="#faqDefensa">
-                <div class="accordion-body">
-                
-                   En DEFENSA JURÍDICA ofrecemos una cobertura legal integral y multidisciplinaria, 
-                   con especial énfasis en Derecho Familiar (divorcios, custodia, pensiones 
-                   alimenticias), Derecho Laboral (despidos injustificados, liquidaciones, contratos) 
-                   y Derecho Civil (contratos, arrendamientos, cobranza, responsabilidad civil). 
-                   Además, contamos con especialistas en otras ramas del Derecho. 
-                   Nuestro equipo está conformado por abogados con formación continua y amplia 
-                   experiencia práctica en litigios y asesoría, lo que nos permite ofrecer 
-                   estrategias legales sólidas y enfocadas en obtener el mejor resultado posible 
-                   para su caso.
-                
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="faq-heading-4">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#faq-collapse-4" aria-expanded="false" aria-controls="faq-collapse-4">
-                  ¿Cuál es la estructura de honorarios de DEFENSA JURÍDICA? ¿Ofrecen planes de pago?
-                </button>
-              </h2>
-              <div id="faq-collapse-4" class="accordion-collapse collapse" aria-labelledby="faq-heading-4"
-                data-bs-parent="#faqDefensa">
-                <div class="accordion-body">
-                
-                    Nuestros honorarios se basan en la complejidad del asunto, el tiempo de 
-                    dedicación estimado y el valor del litigio. Tras la Valoración Inicial, 
-                    se le presentará una propuesta de Honorarios Justos y Detallados a través 
-                    de un Contrato de Prestación de Servicios, donde se especifican claramente 
-                    todos los costos involucrados, sin cargos ocultos. Comprendiendo las necesidades 
-                    de nuestros clientes, ofrecemos Planes de Pago Flexibles que pueden adaptarse 
-                    a su capacidad financiera, sujetos a las políticas internas del despacho.
-                
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <div class="bg-white p-4 rounded shadow-sm">
-            <h3 class="mb-4">¿Necesitas asesoría legal?</h3>
-            <p>Agenda una consulta gratuita con uno de nuestros abogados especializados:</p>
-            <ul class="mb-4">
-              <li>Evaluaremos tu caso sin compromiso</li>
-              <li>Te explicaremos las opciones disponibles</li>
-              <li>Recibirás un plan de acción personalizado</li>
-            </ul>
-            <a href="#contacto" class="btn btn-primary w-100">Solicitar Consulta Gratuita</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Acciones -->
-  <section id="acciones" class="testimonial-section" 
-  style="background: linear-gradient(#1c0409c3, rgba(45, 33, 36, 0.9)), url('./img/social.svg');">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title text-white">Nuestras acciones como defenza juridica</h2>
-        <p class="text-white-50">Acciones, eventos y mas.</p>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "Excelente asesoría legal, muy profesionales y atentos en todo momento. Gracias a ellos resolví mi caso con éxito en menos tiempo del esperado."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">Roberto Martínez</h5>
-                <small>Caso de derecho laboral</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "El equipo de Defensa Jurídica Cancún me ayudó en un complicado proceso de divorcio. Su profesionalismo y sensibilidad hicieron la diferencia."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">María González</h5>
-                <small>Caso de derecho familiar</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              "Contraté sus servicios para un caso penal y quedé impresionado con su conocimiento y dedicación. Defendieron mis derechos con excelentes resultados."
-            </div>
-            <div class="client-info">
-              <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Cliente satisfecho">
-              <div>
-                <h5 class="mb-0">Carlos Ramírez</h5>
-                <small>Caso de derecho penal</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="contact-section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title">Contáctanos</h2>
-        <p class="text-muted">Estamos aquí para ayudarte con cualquier consulta legal</p>
-      </div>
-      
-      <div class="row g-5">
-        <div class="col-lg-5">
-          <div class="contact-info-box">
-            <h3>Información de Contacto</h3>
-            
-            <div class="d-flex align-items-start mb-4">
-              <i class="fas fa-map-marker-alt mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Dirección</h5>
-                <p>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún, Benito Juárez, Quintana Roo., Cancún, México</p>
-              </div>
-            </div>
-          
-
-            <div class="d-flex align-items-start mb-4">
-              <i  class="fab fa-instagram mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Instagram</h5>
-                <p><a href="https://www.instagram.com/defensajurid1c4/">
-                  /defensajurid1c4</a></p>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-start mb-4">
-              <i  class="fab fa-whatsapp mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">whatsapp</h5>
-                <p><a href="https://api.whatsapp.com/send?phone=5219983013652&">
-                  +52 1 998 301 3652</a></p>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-start mb-4">
-              <i  class="fab fa-facebook mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Facebook</h5>
-                <p><a href="https://www.facebook.com/Abogado77500">
-                @Abogado77500</a></p>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-start mb-4">
-              <i class="fas fa-phone mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Teléfono</h5>
-                <p><a href="tel:+529983013652">+52 998 301 3652</a></p>
-              </div>
-            </div>
-            
-            <div class="d-flex align-items-start mb-4">
-              <i class="fas fa-envelope mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Email</h5>
-                <p><a href="mailto:davidperez.abogado77@gmail.com">davidperez.abogado77@gmail.com</a></p>
-              </div>
-            </div>
-
-            <div class="d-flex align-items-start">
-              <i class="fas fa-clock mt-1 me-3"></i>
-              <div>
-                <h5 class="text-light">Horario</h5>
-                <p>Lunes a Viernes: 9:00 AM - 7:00 PM<br>Sábados: 10:00 AM - 2:00 PM</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="col-lg-7">
-          <div class="bg-white p-4 rounded shadow-sm">
-            <h3 class="mb-4">Envíanos un Mensaje</h3>
-            <form class="contact-form" onsubmit="sendMail(event)">
-              <div class="row">
-                <div class="col-md-6">
-                  <input type="text" id="nombre" class="form-control" placeholder="Nombre completo" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="email" id="correo" class="form-control" placeholder="Correo electrónico" required>
-                </div>
-              </div>
-              <input type="text" id="asunto" class="form-control" placeholder="Asunto">
-              <textarea class="form-control" id="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-              <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <p class="mb-4">Ofrecemos asesoría legal especializada para proteger tus derechos con un equipo de abogados expertos, comprometidos con tu tranquilidad y seguridad jurídica.</p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-        
-        <div class="col-lg-2 col-md-4">
-          <h5>Enlaces Rápidos</h5>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Nuestro Equipo</a></li>
-            <li><a href="#">Testimonios</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-4">
-          <h5>Servicios</h5>
-          <ul>
-            <li><a href="#">Derecho Penal</a></li>
-            <li><a href="#">Derecho Civil</a></li>
-            <li><a href="#">Derecho Laboral</a></li>
-            <li><a href="#">Derecho Familiar</a></li>
-            <li><a href="#">Derecho Mercantil</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-4">
-          <h5>Contacto</h5>
-          <ul>
-            <li><i class="fas fa-map-marker-alt me-2"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún, Benito Juárez, Quintana Roo., Cancún, México</li>
-            <li><i class="fas fa-phone me-2"></i>+52 998 301 3652</li>
-            <li><i class="fas fa-envelope me-2"></i> davidperez.abogado77@gmail.com</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2023 Defensa Jurídica Cancún. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+   <ensamblar src="./src/html/apartados/text_section_information.html">
+        Cargando header...
+    </ensamblar>
+  
 
 
 
+    <ensamblar src="./src/html/apartados/tergets_person.html"
+    miken_datos='{
+        "img":"./src/img/social.svg",
+    }' >
+        Cargando header...
+    </ensamblar>
 
-  <script>
-    const overlay = document.getElementById("menuOverlay");
+
+    <ensamblar src="./src/html/apartados/faq.html">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/apartados/acciones.html"">
+        Cargando header...
+    </ensamblar>
+
+
+     <ensamblar src="./src/html/apartados/contacto.html"">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/secciones/footer.html">
+        Cargando pie...
+    </ensamblar>
+
     
-    function toggle_menu() {
-      const isActive = overlay.classList.toggle("active"); // Alterna la clase 'active'
-      // Control del scroll del body
-      document.body.style.overflow = isActive ? "hidden" : "auto";
-    }
-
-    function mostrar_menu() {
-      overlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-    
-    function ocultar_menu() {
-      overlay.classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-    
-    // Cerrar menú al presionar Esc
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        ocultar_menu();
-      }
-    });
-
-    function sendMail(event) {
-      event.preventDefault(); // Evita que el formulario se envíe normalmente
-
-      const nombre = document.getElementById("nombre").value;
-      const correo = document.getElementById("correo").value;
-      const asunto = document.getElementById("asunto").value;
-      const mensaje = document.getElementById("mensaje").value;
-
-      const email = "davidperez.abogado77@gmail.com";
-      const body = `Nombre: ${nombre}%0ACorreo: ${correo}%0AMensaje: ${mensaje}`;
-      const subject = encodeURIComponent(asunto || "Mensaje desde formulario web");
-
-      // Construye el mailto:
-      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    }
-  </script>
-<!-- COPOS DE NIEVE
-<script src="./js/snowstorm.js"></script>
- <script>
-  window.addEventListener('load', () => {
-    snowStorm.excludeMobile = false; 
-    snowStorm.snowColor = '#ffffff';
-    snowStorm.flakesMax = 50;
-    snowStorm.flakesMaxActive =10;
-    snowStorm.followMouse = false;
-    snowStorm.snowCharacter = "❄";
-  });
-</script> 
--->
-<script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js"></script>
-<!-- Año nuevo
-<script src="./js/new_year.js"></script>
--->
+    <script type="module" src="./src/js/main.js"></script>
+    <script src="./src/css/bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

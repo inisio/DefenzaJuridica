@@ -1,357 +1,81 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="Servicio Pro Bono | Defensa Jurídica Cancún | Asistencia legal gratuita">
-  <link rel="shortcut icon" href="logo.jpg">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Servicio Pro Bono - Defensa Jurídica Cancún</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Peson desing -->
-  <link rel="stylesheet" href="../DefenzaJuridica/css/landing.css">
+    <title>Home - Sistema de Productos</title>
+    <link rel="stylesheet" href="./src/css/bootstrap-5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./src/css/main.css">
 </head>
+<body class="bg-complementario-secundario min-h-screen">
 
-<body>
 
-  <!-- Barra superior de contacto -->
-  <div class="top-bar d-none d-lg-block">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="contact-info">
-          <a href="./"><img src="./logo.jpg" width="40rem"></a>
-          <a href="tel:+529983013652"><i class="fas fa-phone"></i> +52 998 301 3652</a>
-          <a href="mailto:davidperez.abogado77@gmail.com"><i class="fas fa-envelope"></i> davidperez.abogado77@gmail.com</a>
-          <a><i class="fas fa-map-marker-alt"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún,<br> Benito Juárez, Quintana Roo., Cancún, México</a>
-        </div>
-        <div class="social-links">
-          <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
-          <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <ensamblar src="./src/html/secciones/header.html">
+        Cargando header...
+    </ensamblar>
+  
 
-  <!-- Botón para abrir el menú -->
-  <div class="menu-toggle" onclick="toggle_menu()"><i class="fas fa-bars me-2"></i>Menú</div>
+    <ensamblar 
+    src="./src/html/apartados/hero_section_image.html"
+    miken_datos='{
+        "img":"https://i.etsystatic.com/13403651/r/il/40b0bf/6851322246/il_570xN.6851322246_fof9.jpg",
 
-  <!-- Fondo + Menú -->
-  <div class="menu-overlay" id="menuOverlay" onclick="ocultar_menu()">
-    <aside class="side-menu" onclick="event.stopPropagation()" role="navigation" aria-label="Menú lateral">
-      <header class="d-flex justify-content-between align-items-center mb-4">
-        <img onclick="ocultar_menu()" src="./logo.jpg" alt="Defensa Jurídica Cancún" class="logo mb-4">
-      </header>
-      <nav>
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home me-2"></i>Inicio</a></li>
-          <li><a href="index.html#servicios"><i class="fas fa-gavel me-2"></i>Servicios</a></li>
-          <li><a href="index.html#testimonios"><i class="fas fa-star me-2"></i>Testimonios</a></li>
-          <li><a href="index.html#faq"><i class="fas fa-book me-2"></i>Preguntas Frecuentes</a></li>
-          <li><a href="#"><i class="fas fa-hand-holding-heart me-2"></i>Pro Bono</a></li>
-          <li><a href="index.html#contacto"><i class="fas fa-envelope me-2"></i>Contacto</a></li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
+        "Titulo1":"Abogados en",
+        "TituloMark":"Cancún",
 
-  <!-- Hero Section Pro Bono -->
-  <section class="hero-section probono">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h1>Servicio Legal <mark>Pro Bono</mark></h1>
-          <p>En Defensa Jurídica Cancún creemos que la justicia debe ser accesible para todos. Nuestro programa Pro Bono ofrece asistencia legal gratuita a personas y comunidades que enfrentan barreras económicas para acceder a representación legal.</p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#formulario" class="btn btn-gold">Solicitar Asistencia</a>
-            <a href="#informacion" class="btn btn-outline-light" style="padding: 0.8rem 2rem;">Más Información</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Información sobre el servicio Pro Bono -->
-  <section id="servicios" class="py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="section-title">¿Qué es el Servicio Pro Bono?</h2>
-        <p class="text-muted">Comprometidos con la justicia social y el acceso a la representación legal</p>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-hand-holding-heart"></i>
-            </div>
-            <h3>Nuestro Compromiso</h3>
-            <p>Como parte de nuestra responsabilidad social, dedicamos una parte significativa de nuestro tiempo y recursos a brindar servicios legales gratuitos a quienes más lo necesitan.</p>
-          </div>
-        </div>
+        "SubTitulo":"Bienvenido(a) a",
+        "SubTituloStrong":"Defensa Jurídica.",
+        "info":"Somos la firma de abogados especialistas con el conocimiento jurídico y la constante actualización que usted requiere. Contamos con un equipo de profesionales con sólida experiencia en litigio y especialización en diversas ramas del derecho, brindando soluciones efectivas en Cancún, Quintana Roo.",
         
-        <div class="col-md-4">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-balance-scale"></i>
-            </div>
-            <h3>Criterios de Elegibilidad</h3>
-            <p>Evaluamos cada solicitud considerando factores como situación económica, urgencia del caso, impacto en la comunidad y disponibilidad de nuestros recursos.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-4">
-          <div class="service-card p-4">
-            <div class="service-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3>Áreas de Enfoque</h3>
-            <p>Ofrecemos asistencia en diversas áreas del derecho, con especial énfasis en casos de derecho familiar, laboral y civil que afecten significativamente la calidad de vida.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col mt-5">
-        <div class="service-card p-4">
-          <div>
-            <h3 class="text-center mb-4">Proceso de Solicitud</h3>
-            <ol>
-              <li class="mb-3"><strong>Complete el formulario:</strong> Proporcione información detallada sobre su situación legal y económica.</li>
-              <li class="mb-3"><strong>Revisión inicial:</strong> Nuestro equipo evaluará su solicitud dentro de los próximos 5-7 días hábiles.</li>
-              <li class="mb-3"><strong>Entrevista:</strong> Si su caso cumple con los criterios, programaremos una entrevista para conocer más detalles.</li>
-              <li class="mb-3"><strong>Decisión:</strong> Le notificaremos si podemos tomar su caso y le asignaremos un abogado especializado.</li>
-            </ol>
-            <p class="mt-4"><strong>Nota:</strong> La aceptación de su solicitud está sujeta a la disponibilidad de nuestros recursos y la naturaleza de su caso.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        "butom1":"Agenda Consulta",
+        "butom2":"Nuestros servicios",
 
-  <!-- Formulario Pro Bono -->
-  <section id="formulario" class="form-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="probono-form-container">
-            <h2>Formulario de Solicitud Pro Bono</h2>
-            <p class="text-muted mb-4">Complete este formulario con la mayor precisión posible. Toda la información proporcionada será tratada con estricta confidencialidad.</p>
-            
-            <form id="probono-form">
-              <div class="row">
-                <div class="col-md-6">
-                  <input type="text" id="nombre" class="form-control" placeholder="Nombre(s)" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" id="apellidoP" class="form-control" placeholder="Apellido Paterno" required>
-                </div>
-              </div>
-              
-              <div class="row">
-                <div class="col-md-6">
-                  <input type="text" id="apellidoM" class="form-control" placeholder="Apellido Materno" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="number" id="edad" class="form-control" placeholder="Edad" min="1" max="120" required>
-                </div>
-              </div>
-              
-              <input type="text" id="contacto" class="form-control" placeholder="Correo electrónico o Teléfono" required>
-              
-              <div class="row">
-                <div class="col-md-12">
-                  <input type="text" id="ciudad" class="form-control" placeholder="Ciudad" required>
-                </div>
-              </div>
-              
-              <textarea id="descripcion" class="form-control" placeholder="Describe tu caso legal (máximo 850 caracteres)" maxlength="900" required></textarea>
-              
-              <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" id="privacidad" required>
-                <label class="form-check-label" for="privacidad">
-                  Acepto que mis datos sean tratados de acuerdo con la <a href="#">Política de Privacidad</a>
-                </label>
-              </div>
-              
-              <button type="submit" class="btn-submit">Enviar Solicitud</button>
-              
-              <div id="probono-status"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        "href_butom1":"#",
+        "href_butom2":"#",
+    }'  
+    >
+        Cargando herosection...
+    </ensamblar>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <h5>Defensa Jurídica Cancún</h5>
-          <p class="mb-4">Ofrecemos asesoría legal especializada para proteger tus derechos con un equipo de abogados expertos, comprometidos con tu tranquilidad y seguridad jurídica.</p>
-          <div class="social-links">
-            <a href="https://www.facebook.com/Abogado77500"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/defensajurid1c4/"><i class="fab fa-instagram"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=5219983013652&"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-        
-        <div class="col-lg-2 col-md-4">
-          <h5>Enlaces Rápidos</h5>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index.html#servicios">Servicios</a></li>
-            <li><a href="index.html#testimonios">Testimonios</a></li>
-            <li><a href="index.html#faq">Preguntas Frecuentes</a></li>
-            <li><a href="#">Pro Bono</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-4">
-          <h5>Servicios</h5>
-          <ul>
-            <li><a href="index.html#servicios">Derecho Penal</a></li>
-            <li><a href="index.html#servicios">Derecho Civil</a></li>
-            <li><a href="index.html#servicios">Derecho Laboral</a></li>
-            <li><a href="index.html#servicios">Derecho Familiar</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-4">
-          <h5>Contacto</h5>
-          <ul>
-            <li><i class="fas fa-map-marker-alt me-2"></i>Av. Kabah, Mza 1, Super Manzana 248 77516, Cancún, Benito Juárez, Quintana Roo., Cancún, México</li>
-            <li><i class="fas fa-phone me-2"></i>+52 998 301 3652</li>
-            <li><i class="fas fa-envelope me-2"></i> davidperez.abogado77@gmail.com</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>&copy; 2023 Defensa Jurídica Cancún. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+   <ensamblar src="./src/html/apartados/text_section_information.html">
+        Cargando header...
+    </ensamblar>
+  
 
-  <script>
-    const overlay = document.getElementById("menuOverlay");
-    const API_URL = "https://script.google.com/macros/s/AKfycbxIFDH6J0N-DBtYUmpCsOeAnTN5jiWfnjDqu5PNV6vOkt9zcSHaosOAlxobbgR8TkOY/exec";
+    <ensamblar src="./src/html/apartados/targets simple.html">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/apartados/tergets_person.html">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/apartados/faq.html">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/apartados/acciones.html"">
+        Cargando header...
+    </ensamblar>
+
+
+     <ensamblar src="./src/html/apartados/contacto.html"">
+        Cargando header...
+    </ensamblar>
+
+
+    <ensamblar src="./src/html/secciones/footer.html">
+        Cargando pie...
+    </ensamblar>
+
     
-    function toggle_menu() {
-      const isActive = overlay.classList.toggle("active");
-      document.body.style.overflow = isActive ? "hidden" : "auto";
-    }
-
-    function mostrar_menu() {
-      overlay.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-    
-    function ocultar_menu() {
-      overlay.classList.remove("active");
-      document.body.style.overflow = "auto";
-    }
-    
-    // Cerrar menú al presionar Esc
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        ocultar_menu();
-      }
-    });
-
-    function showStatus(msg, type="probono-ok") {
-      const box = document.getElementById("probono-status");
-      box.className = type;
-      box.innerText = msg;
-      box.style.display = "block";
-      
-      // Scroll para mostrar el mensaje
-      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    // Manejo del formulario
-    document.getElementById("probono-form").addEventListener("submit", async function(event) {
-      event.preventDefault();
-
-      const data = {
-        nombre: document.getElementById("nombre").value.trim(),
-        apellidoP: document.getElementById("apellidoP").value.trim(),
-        apellidoM: document.getElementById("apellidoM").value.trim(),
-        edad: document.getElementById("edad").value.trim(),
-        contacto: document.getElementById("contacto").value.trim(),
-        ciudad: document.getElementById("ciudad").value.trim(),
-        costo: 0,
-        descripcion: document.getElementById("descripcion").value.trim(),
-        estado: 0
-      };
-
-      // Validación
-      if (!data.nombre || !data.apellidoP || !data.apellidoM) {
-        showStatus("Completa nombre y apellidos", "probono-error");
-        return;
-      }
-
-      if (data.descripcion.length > 850) {
-        showStatus("La descripción supera los 850 caracteres", "probono-error");
-        return;
-      }
-
-      if (!document.getElementById("privacidad").checked) {
-        showStatus("Debes aceptar la política de privacidad", "probono-error");
-        return;
-      }
-
-      showStatus("Enviando solicitud...", "probono-ok");
-
-      try {
-        const res = await fetch(API_URL, {
-          method: "POST",
-          body: JSON.stringify(data)
-        });
-
-        const json = await res.json();
-
-        if (json.status === "ok") {
-          showStatus("Solicitud enviada correctamente. ID: " + json.id + ". Nos pondremos en contacto contigo pronto.", "probono-ok");
-
-          // Limpiar formulario
-          document.getElementById("probono-form").reset();
-        } else {
-          showStatus("Error al enviar la solicitud: " + json.error, "probono-error");
-        }
-
-      } catch (err) {
-        showStatus("Error al conectar con el servidor. Intenta nuevamente.", "probono-error");
-      }
-    });
-  </script>
-<!-- Copos de nieve
-<script src="./js/snowstorm.js"></script>
-<script>
-  window.addEventListener('load', () => {
-    snowStorm.excludeMobile = false; 
-    snowStorm.snowColor = '#ffffff';
-    snowStorm.flakesMax = 80;
-    snowStorm.flakesMaxActive = 50;
-    snowStorm.followMouse = true;
-    snowStorm.snowCharacter = "❄";
-  });
-</script>
--->
+    <script type="module" src="./src/js/main.js"></script>
+    <script src="./src/css/bootstrap-5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
