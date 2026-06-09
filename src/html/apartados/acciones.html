@@ -1,0 +1,189 @@
+<section id="acciones"
+    class="py-5 text-white position-relative overflow-hidden testimonial-section"
+    style="
+    background-image:
+    linear-gradient(135px, rgba(15, 23, 42, 0.95), rgba(43, 12, 24, 0.92)), url('./src/img/social.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    ">
+
+    <!-- Destello de color de fondo difuminado para dar profundidad (Opcional pero recomendado) -->
+    <div class="position-absolute top-50 start-50 translate-middle bg-dark opacity-10 rounded-circle" style="width: 400px; height: 400px; filter: blur(120px); pointer-events: none;"></div>
+
+    <div class="container py-4 position-relative" style="z-index: 2;">
+
+        <!-- Cabecera Estilizada -->
+        <div class="text-center mb-5" style="max-width: 600px; margin: 0 auto;">
+            <h2 class="display-5 fw-bold text-white mb-3">
+                Áreas de <span class="text-warning">Práctica</span>
+            </h2>
+            <p class="text-white-50 fs-5 fw-light">
+                Experiencia y representación jurídica especializada.
+            </p>
+            <div class="bg-warning mx-auto mt-2" style="width: 50px; height: 3px; border-radius: 2px;"></div>
+        </div>
+
+        <!-- Carrusel -->
+        <div id="areasPractica" class="carousel slide" data-bs-ride="carousel" style="min-height: 380px;">
+            
+            <!-- Indicadores inferiores modernos (Líneas finas) -->
+            <div class="carousel-indicators mb-n4">
+                <button type="button" data-bs-target="#areasPractica" data-bs-slide-to="0" class="active" aria-current="true" style="width: 30px; height: 4px; border-radius: 2px;"></button>
+                <button type="button" data-bs-target="#areasPractica" data-bs-slide-to="1" style="width: 30px; height: 4px; border-radius: 2px;"></button>
+                <button type="button" data-bs-target="#areasPractica" data-bs-slide-to="2" style="width: 30px; height: 4px; border-radius: 2px;"></button>
+                <button type="button" data-bs-target="#areasPractica" data-bs-slide-to="3" style="width: 30px; height: 4px; border-radius: 2px;"></button>
+            </div>
+
+            <div class="carousel-inner px-md-5">
+
+                <!-- Penal -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10">
+                            <!-- Efecto Glassmorphism con bordes sutiles iluminados -->
+                            <div class="p-5 rounded-4 shadow-lg border border-white border-opacity-10 custom-carousel-card" 
+                                 style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                                
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded-3 p-3 me-3">
+                                        <i class="fas fa-handcuffs fs-3"></i> <!-- Icono Penal -->
+                                    </div>
+                                    <h3 class="text-warning fw-bold m-0 border-start border-warning border-3 ps-3">
+                                        Derecho Penal
+                                    </h3>
+                                </div>
+
+                                <p class="lead text-white fw-semibold mb-3">
+                                    Delitos de fuero común y federal.
+                                </p>
+
+                                <p class="text-white-50 lh-lg m-0">
+                                    Amparo directo o indirecto en materia penal. Asesoría y acompañamiento para Centros de Justicia Alternativa.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Civil -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10">
+                            <div class="p-5 rounded-4 shadow-lg border border-white border-opacity-10 custom-carousel-card" 
+                                 style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded-3 p-3 me-3">
+                                        <i class="fas fa-file-signature fs-3"></i> <!-- Icono Civil -->
+                                    </div>
+                                    <h3 class="text-warning fw-bold m-0 border-start border-warning border-3 ps-3">
+                                        Derecho Civil
+                                    </h3>
+                                </div>
+
+                                <p class="lead text-white fw-semibold mb-3">
+                                    Solución de controversias patrimoniales y contractuales.
+                                </p>
+
+                                <p class="text-white-50 lh-lg m-0">
+                                    Cumplimiento e incumplimiento de contratos, jurisdicciones voluntarias, consignaciones económicas, desahucios y reivindicaciones.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laboral -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10">
+                            <div class="p-5 rounded-4 shadow-lg border border-white border-opacity-10 custom-carousel-card" 
+                                 style="background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded-3 p-3 me-3">
+                                        <i class="fas fa-briefcase fs-3"></i> <!-- Icono Laboral -->
+                                    </div>
+                                    <h3 class="text-warning fw-bold m-0 border-start border-warning border-3 ps-3">
+                                        Derecho Laboral
+                                    </h3>
+                                </div>
+
+                                <p class="lead text-white fw-semibold mb-3">
+                                    Defensa de trabajadores y empleadores.
+                                </p>
+
+                                <p class="text-white-50 lh-lg m-0">
+                                    Demandas individuales y colectivas, despidos justificados e injustificados, acoso laboral, conciliaciones e indemnizaciones.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Familiar -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-10">
+                            <div class="p-5 rounded-4 shadow-lg border border-white border-opacity-10 custom-carousel-card" >
+
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded-3 p-3 me-3">
+                                        <i class="fas fa-people-roof fs-3"></i> <!-- Icono Familiar -->
+                                    </div>
+                                    <h3 class="text-warning fw-bold m-0 border-start border-warning border-3 ps-3">
+                                        Derecho Familiar
+                                    </h3>
+                                </div>
+
+                                <p class="lead text-white fw-semibold mb-3">
+                                    Protección integral de la familia.
+                                </p>
+
+                                <p class="text-white-50 lh-lg m-0">
+                                    Divorcios, guarda y custodia, pensión alimenticia, convivencias, paternidad, sucesiones y patria potestad.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botones de Control Estilizados (Circulares y limpios) -->
+            <button class="carousel-control-prev custom-ctrl-btn" type="button" data-bs-target="#areasPractica" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark p-3 rounded-circle border border-white border-opacity-25" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            
+            <button class="carousel-control-next custom-ctrl-btn" type="button" data-bs-target="#areasPractica" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark p-3 rounded-circle border border-white border-opacity-25" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CSS opcional para pulir detalles visuales de los controles -->
+<style>
+    /* Ajusta la opacidad y posición de las flechas para que no estorben en móviles */
+    .custom-ctrl-btn {
+        width: 5%;
+    }
+    @media (max-width: 768px) {
+        .custom-ctrl-btn {
+            display: none; /* En móviles es mejor navegar arrastrando (swipe) */
+        }
+    }
+    /* Suavizado general de textos */
+    .custom-carousel-card {
+        transition: transform 0.4s ease;
+    }
+</style>
