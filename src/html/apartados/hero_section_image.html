@@ -4,7 +4,8 @@
   background-image: linear-gradient(#221502da, #c0985c6d), url("{{img}}"); 
   '
   >
-    <div class="container">
+    <div class="container d-flex flex-column justify-content-center" 
+    style="min-height: 70vh;">
       <div class="row align-items-center">
         <div class="col-lg-7 hero-content">
           <h1 id="fireworks_titulo"></h1>
@@ -19,3 +20,56 @@
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener("ensamblar:ready", () => {
+      (function() {
+        // ---------- 1. Calcular años desde el 19 mayo 2022 ----------
+        function calcularAnios() {
+          const inicio = new Date(2022, 4, 19); // mes 4 = mayo (0-11)
+          const hoy = new Date();
+          let anios = hoy.getFullYear() - inicio.getFullYear();
+          const aniversarioEsteAnio = new Date(hoy.getFullYear(), 4, 19);
+          if (hoy < aniversarioEsteAnio) anios--;
+          return Math.max(0, anios);
+        }
+
+        // ---------- 2. Cargar el SVG, reemplazar marcador, aplicar ----------
+        function aplicarLogoAniversario() {
+          const hero = document.querySelector(".hero-section");
+          if (!hero) {
+            console.warn("No se encontró .hero-section");
+            return;
+          }
+
+          fetch("./src/img/aniversario.svg")
+            .then(respuesta => {
+              if (!respuesta.ok) throw new Error("No se pudo cargar aniversario.svg");
+              return respuesta.text();
+            })
+            .then(svgTexto => {
+              const anios = calcularAnios();
+              const svgConNumero = svgTexto.replace("__ANIOS__", anios);
+
+              // Convertir a Data URI (encodeURIComponent para caracteres especiales)
+              const dataUri = "data:image/svg+xml;charset=utf-8," +
+                              encodeURIComponent(svgConNumero);
+
+              // Aplicar como background-image: gradiente + SVG
+              hero.style.backgroundImage =
+                `linear-gradient(#221502da, #c0985c6d), url("${dataUri}")`;
+            })
+            .catch(err => {
+              console.error("Error cargando el SVG del aniversario:", err);
+            });
+        }
+
+        // ---------- 3. Ejecutar cuando el DOM esté listo ----------
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", aplicarLogoAniversario);
+        } else {
+          aplicarLogoAniversario();
+        }
+      })();
+    })
+  </script>
