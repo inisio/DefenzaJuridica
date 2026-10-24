@@ -1,0 +1,226 @@
+<!-- PANTALLA DE ENTRADA EJECUTIVA PARA DESPACHO JURÍDICO -->
+<div id="clickCurtain" aria-label="Presione para ingresar y activar audio">
+  <!-- Paneles Estructurales Blancos/Marfil -->
+  <div class="legal-panel panel-left"></div>
+  <div class="legal-panel panel-right"></div>
+  
+  <!-- Resplandor sutil de fondo -->
+  <div class="legal-overlay"></div>
+
+  <!-- Placa Plenaria Central en Negro Profundo con Detalles Dorados -->
+  <div class="click-content">
+    <div class="legal-badge">
+      <!-- Logo del Cliente (Fondo negro integrado) -->
+      <img class="justice-scale" src="./src/img/logo.jpg" alt="Logo Firma Jurídica">
+      
+      <span class="firm-tag">FIRMA JURÍDICA</span>
+      <div class="click-me">INGRESAR</div>
+      <span class="sub-text">HAZ CLIC PARA CONTINUAR</span>
+      <div class="gold-accent-line"></div>
+    </div>
+  </div>
+</div>
+
+<audio id="clickSong" src="{{path_song}}" preload="auto"></audio>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
+
+#clickCurtain {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: transparent; /* Marfil limpio institucional */
+}
+
+/* Paneles Estructurales Ejecutivos */
+#clickCurtain .legal-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.825);
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.04);
+  transition: transform 1.2s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+#clickCurtain .panel-left {
+  left: 0;
+  border-right: 2px solid #c5a059; /* Línea de corte en Oro Pulido */
+}
+
+#clickCurtain .panel-right {
+  right: 0;
+  border-left: 2px solid #c5a059;
+}
+
+/* Resplandor cálido central */
+#clickCurtain .legal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(197, 160, 89, 0.12) 0%,
+    transparent 65%
+  );
+}
+
+/* Placa Central Imponente (Negro Azabache para acoplar el logo) */
+#clickCurtain .click-content {
+  position: relative;
+  z-index: 3;
+  padding: 55px 85px; /* Tamaño más imponente y ejecutivo */
+  background: #000000; /* Fondo negro absoluto para ocultar bordes del logo */
+  border: 2px solid #c5a059; /* Marco doble con brillo dorado */
+  border-radius: 4px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(197, 160, 89, 0.2),
+    inset 0 0 0 3px #000000,
+    inset 0 0 0 4px rgba(197, 160, 89, 0.4);
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+}
+
+#clickCurtain:hover .click-content {
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(197, 160, 89, 0.4),
+    inset 0 0 0 3px #000000,
+    inset 0 0 0 4px #c5a059;
+}
+
+#clickCurtain .legal-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Agrandado con integración perfecta */
+#clickCurtain .justice-scale {
+  width: auto;
+  max-width: 220px; /* Tamaño destacado e imponente para el logo */
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#clickCurtain .firm-tag {
+  color: #c5a059;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Texto Principal "INGRESAR" Agrandado en Oro Metálico */
+#clickCurtain .click-me {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(34px, 6vw, 60px); /* Letra grande y prominente */
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  text-align: center;
+  user-select: none;
+  margin-bottom: 8px;
+  
+  /* Gradiente Dorado Imperial */
+  background: linear-gradient(
+    135deg, 
+    #ccac2b 0%, 
+    #e6c687 30%, 
+    #c5a059 60%, 
+    #ffd700 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  transition: transform 0.3s ease;
+}
+
+#clickCurtain:hover .click-me {
+  transform: scale(1.03);
+}
+
+#clickCurtain .sub-text {
+  color: #a0a0a0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+#clickCurtain .gold-accent-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5a059, transparent);
+  margin-top: 20px;
+}
+
+/* --- ANIMACIÓN DE APERTURA --- */
+#clickCurtain.is-leaving {
+  pointer-events: none;
+}
+
+#clickCurtain.is-leaving .panel-left {
+  transform: translateX(-100%);
+}
+
+#clickCurtain.is-leaving .panel-right {
+  transform: translateX(100%);
+}
+
+#clickCurtain.is-leaving .click-content {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+#clickCurtain.is-leaving .legal-overlay {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #clickCurtain .legal-panel,
+  #clickCurtain .click-content {
+    transition-duration: 0.4s;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("ensamblar:ready", () => {
+  const curtain = document.getElementById("clickCurtain");
+  const audio = document.getElementById("clickSong");
+
+  if (!curtain || !audio) {
+    console.error("Cortina: faltan los elementos necesarios.");
+    return;
+  }
+
+  curtain.addEventListener("click", async () => {
+    try {
+      await audio.play();
+
+      curtain.classList.add("is-leaving");
+
+      setTimeout(() => curtain.remove(), 1200);
+    } catch (error) {
+      console.error("No se pudo reproducir la música:", error);
+    }
+  }, { once: true });
+});
+</script>

@@ -174,9 +174,10 @@ nav a:hover {
 
 /* Sección principal */
 .hero-section {
-  background: var(--linear-hero-section);
-  background-size: cover;
-  background-position: center;
+  background: #060e1b;
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: right bottom;
   color: white;
   padding: 5rem 0;
   position: relative;
