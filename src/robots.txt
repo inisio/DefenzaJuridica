@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inisio.github.io/DefenzaJuridica/sitemap.xml
